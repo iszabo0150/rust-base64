@@ -86,6 +86,7 @@ impl From<DecodeError> for DecodeSliceError {
 /// See [`Engine::decode`].
 #[deprecated(since = "0.21.0", note = "Use Engine::decode")]
 #[cfg(any(feature = "alloc", test))]
+#[sniffer::panic_free]
 pub fn decode<T: AsRef<[u8]>>(input: T) -> Result<Vec<u8>, DecodeError> {
     STANDARD.decode(input)
 }
