@@ -171,6 +171,7 @@ pub(crate) fn complete_quads_len(
 /// `output` will have its first 6 bytes overwritten
 // yes, really inline (worth 30-50% speedup)
 #[inline(always)]
+#[sniffer::panic_free]
 fn decode_chunk_8(
     input: &[u8],
     index_at_start_of_input: usize,
